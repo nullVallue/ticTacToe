@@ -1,8 +1,12 @@
 class Player:
-    def __init__(self, name:str, mark:str):
-       self.name = name
-       self.score = 0
-       self.mark = mark
+    def __init__(self, name:str, cross:bool):
+        self.name = name
+        self.score = 0
+        self.cross = cross
+        if cross:
+            self.mark = 'X'
+        else:
+            self.mark = 'O'
 
     def getName(self) -> str:
         return self.name
@@ -18,3 +22,6 @@ class Player:
 
     def getMark(self) -> str:
         return self.mark
+
+    def isCrossPlayer(self) -> bool:
+        return self.cross

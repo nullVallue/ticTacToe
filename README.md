@@ -12,6 +12,7 @@ Creating ticTacToe game with different programming languages
 ### Player
 > -name:str
 > -score:int
+> -cross:bool
 > -mark:str
 > 
 > +getName():str
@@ -19,6 +20,7 @@ Creating ticTacToe game with different programming languages
 > +addScore():void
 > +resetScore():void
 > +getMark():str
+> +isCross():bool
 
 ### Board
 > -spot:spot[]
