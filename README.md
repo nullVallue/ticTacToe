@@ -18,6 +18,7 @@ Creating ticTacToe game with different programming languages
 > +getScore():int
 > +addScore():void
 > +resetScore():void
+> +getMark():str
 
 ### Board
 > -spot:spot[]
