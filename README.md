@@ -42,5 +42,6 @@ Creating ticTacToe game with different programming languages
 > 
 > +updateBoard():bool
 > +updateBoardIgnore():void
-> +checkWin():int
+> +checkThreeSpots(s1:int, s2:int, s3:int, cross):bool
+> +checkWin(cross):bool
 > +isDraw():bool

@@ -27,44 +27,76 @@ class Game:
         else:
             updatePosition.setEmpty(False)
             updatePosition.setCross(False)
+
+    #checks if the three given spots have the same symbol
+    def checkThreeSpots(self, s1:int, s2:int, s3:int, cross) -> bool:
+        if cross:
+            check = self.boardState.getSpot(s1).isCross() and self.boardState.getSpot(s2).isCross() and self.boardState.getSpot(s3).isCross()
+        else:
+            check = not self.boardState.getSpot(s1).isCross() and not self.boardState.getSpot(s2).isCross() and not self.boardState.getSpot(s3).isCross()
+
+        if not (self.boardState.getSpot(s1).isEmpty() and self.boardState.getSpot(s2).isEmpty() and self.boardState.getSpot(s3).isEmpty()):
+            if check:
+                return True
+            else:
+                return False
+        else:
+            return False
     
-    def checkWin(self, cross):
-        winner = 0
+    def checkWin(self, cross) -> bool:
         # x x x
         # - - - scenario 1
         # - - -
-        if not (self.boardState.getSpot(0).isEmpty() and self.boardState.getSpot(1).isEmpty() and self.boardState.getSpot(2).isEmpty()):
-            crossCheck = self.boardState.getSpot(0).isCross() and self.boardState.getSpot(1).isCross() and self.boardState.getSpot(2).isCross()
-            circleCheck = not self.boardState.getSpot(0).isCross() and not self.boardState.getSpot(1).isCross() and not self.boardState.getSpot(2).isCross()
-            if crossCheck:
-                winner = 1 
-            elif circleCheck:
-                winner = 2
-            else:
-                winner = 0
+        if self.checkThreeSpots(0, 1, 2, cross):
+            return True
 
         # - - -
         # x x x scenario 2
         # - - -
-        elif not (self.boardState.getSpot(3).isEmpty() and self.boardState.getSpot(4).isEmpty() and self.boardState.getSpot(5).isEmpty()):
-            crossCheck = self.boardState.getSpot(3).isCross() and self.boardState.getSpot(4).isCross() and self.boardState.getSpot(5).isCross()
-            circleCheck = not self.boardState.getSpot(3).isCross() and not self.boardState.getSpot(4).isCross() and not self.boardState.getSpot(5).isCross()
-            if crossCheck:
-                winner = 1 
-            elif circleCheck:
-                winner = 2
-            else:
-                winner = 0
+        elif self.checkThreeSpots(3, 4, 5, cross):
+            return True
 
         # - - -
         # - - - scenario 3
         # x x x
-        elif not (self.boardState.getSpot(6).isEmpty() and self.boardState.getSpot(7).isEmpty() and self.boardState.getSpot(8).isEmpty()):
-            crossCheck = self.boardState.getSpot(6).isCross() and self.boardState.getSpot(7).isCross() and self.boardState.getSpot(8).isCross()
-            circleCheck = not self.boardState.getSpot(6).isCross() and not self.boardState.getSpot(7).isCross() and not self.boardState.getSpot(8).isCross()
-            if crossCheck:
-                winner = 1 
-            elif circleCheck:
-                winner = 2
-            else:
-                winner = 0
+        elif self.checkThreeSpots(6, 7, 8, cross):
+            return True
+
+        # x - -
+        # x - - scenario 4
+        # x - -
+        elif self.checkThreeSpots(0, 3, 6, cross):
+            return True
+
+        # - x -
+        # - x - scenario 5
+        # - x -
+        elif self.checkThreeSpots(1, 4, 7, cross):
+            return True
+
+        # - - x
+        # - - x scenario 6
+        # - - x
+        elif self.checkThreeSpots(2, 5, 8, cross):
+            return True
+
+        # x - -
+        # - x - scenario 7
+        # - - x
+        elif self.checkThreeSpots(0, 4, 8, cross):
+            return True
+
+        # - - x
+        # - x - scenario 8
+        # x - -
+        elif self.checkThreeSpots(2, 4, 6, cross):
+            return True
+
+        else:
+            return False
+
+    def isDraw(self) -> bool:
+        full = False
+
+        return full
+
