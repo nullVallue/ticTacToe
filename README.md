@@ -20,7 +20,7 @@ Creating ticTacToe game with different programming languages
 > +addScore():void
 > +resetScore():void
 > +getMark():str
-> +isCross():bool
+> +isCrossPlayer():bool
 
 ### Board
 > -spot:spot[]
