@@ -19,15 +19,9 @@ Creating ticTacToe game with different programming languages
 > +resetScore():void
 
 ### Board
-> -spot00:spot
-> -spot01:spot
-> -spot02:spot
-> -spot10:spot
-> -spot11:spot
-> -spot12:spot
-> -spot20:spot
-> -spot21:spot
-> -spot22:spot
+> -spot:spot[]
+>
+> +getSpot():spot[]
 
 ### Spot
 > -coordinate:int[]
