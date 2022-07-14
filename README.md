@@ -12,6 +12,7 @@ Creating ticTacToe game with different programming languages
 ### Player
 > -name:str
 > -score:int
+> -mark:str
 > 
 > +getName():str
 > +getScore():int
