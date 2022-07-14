@@ -34,7 +34,8 @@ Creating ticTacToe game with different programming languages
 >
 > +isEmpty():bool
 > +isCross():bool
-> +setCross():bool
+> +setCross():void
+> +setEmpty(isempty:bool):void
 
 ### Game 
 > -boardState:board
