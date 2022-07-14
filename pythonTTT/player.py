@@ -15,3 +15,6 @@ class Player:
 
     def resetScore(self):
         self.score = 0
+
+    def getMark(self) -> str:
+        return self.mark
