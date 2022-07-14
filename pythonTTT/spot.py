@@ -10,8 +10,8 @@ class Spot:
     def isCross(self) -> bool:
         return self.empty
 
-    def setCross(self):
-        self.cross = True
+    def setCross(self, iscross:bool):
+        self.cross = iscross 
 
     def setEmpty(self, isempty:bool):
         self.empty = isempty
