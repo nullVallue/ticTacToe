@@ -40,4 +40,7 @@ Creating ticTacToe game with different programming languages
 ### Game 
 > -boardState:board
 > 
+> +updateBoard():bool
+> +updateBoardIgnore():void
+> +checkWin():int
 > +isDraw():bool
