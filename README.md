@@ -34,7 +34,7 @@ Creating ticTacToe game with different programming languages
 > -empty:bool
 > -cross:bool
 >
-> +isTaken():bool
+> +isEmpty():bool
 > +isCross():bool
 
 ### Game 
