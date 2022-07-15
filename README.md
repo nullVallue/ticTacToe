@@ -54,6 +54,7 @@ Creating ticTacToe game with different programming languages
 > 
 > init(player1:Player, player2:Player) 
 > 
+> +getBoardState():Board 
 > +getPlayer(index:int):Player
 > +updateBoard():bool
 > +updateBoardIgnore():void

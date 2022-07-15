@@ -9,6 +9,9 @@ class Game:
     def getPlayer(self, index) -> Player:
         return self.players[index]
 
+    def getBoardState(self) -> Board:
+        return self.boardState
+
     # checks if position to be updated is legally allowed to be played updates and returns True if legal, returns False if illegal
     def updateBoard(self, position:int, player:Player) -> bool:
         updatePosition = self.boardState.getSpot(position)
