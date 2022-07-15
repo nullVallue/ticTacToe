@@ -18,11 +18,11 @@ class Spot:
 
     def printSpot(self):
         if self.empty:
-            print(" ")
+            print(" ", end="")
             return
         elif self.cross:
-            print("x")
+            print("x", end="")
             return
         else:
-            print("o")
+            print("o", end="")
             return
