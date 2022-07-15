@@ -17,6 +17,8 @@ Creating ticTacToe game with different programming languages
 > -cross:bool
 > -mark:str
 > 
+> init(name:str, cross:bool)
+>
 > +getName():str
 > +getScore():int
 > +addScore():void
@@ -27,6 +29,8 @@ Creating ticTacToe game with different programming languages
 ### Board
 > -spot:spot[]
 >
+> init()
+>
 > +getSpot():spot[]
 > +printBoard()
 
@@ -34,6 +38,8 @@ Creating ticTacToe game with different programming languages
 > -coordinate:int[]
 > -empty:bool
 > -cross:bool
+>
+> init(x:int, y:int)
 >
 > +isEmpty():bool
 > +isCross():bool
@@ -45,6 +51,8 @@ Creating ticTacToe game with different programming languages
 > -boardState:board
 > -players:Player[]
 > -winner:str
+> 
+> init(player1:Player, player2:Player) 
 > 
 > +getPlayer(index:int):Player
 > +updateBoard():bool
