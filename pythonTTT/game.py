@@ -95,8 +95,13 @@ class Game:
         else:
             return False
 
-    def isDraw(self) -> bool:
+    # returns true if board is full
+    def isFull(self) -> bool:
         full = False
-
+        for i in range(0,9):
+            if not self.boardState.getSpot(i).isEmpty():
+                full = True
+                break
+            else:
+                full = False
         return full
-
