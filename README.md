@@ -28,6 +28,7 @@ Creating ticTacToe game with different programming languages
 > -spot:spot[]
 >
 > +getSpot():spot[]
+> +printBoard()
 
 ### Spot
 > -coordinate:int[]
