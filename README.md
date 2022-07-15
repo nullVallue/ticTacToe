@@ -43,9 +43,13 @@ Creating ticTacToe game with different programming languages
 
 ### Game 
 > -boardState:board
+> -players:Player[]
+> -winner:str
 > 
+> +getPlayer(index:int):Player
 > +updateBoard():bool
 > +updateBoardIgnore():void
 > +checkThreeSpots(s1:int, s2:int, s3:int, cross):bool
 > +checkWin(cross):bool
 > +isFull():bool
+> +setWinner(index):void

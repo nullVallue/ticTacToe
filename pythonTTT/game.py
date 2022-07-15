@@ -1,8 +1,13 @@
 from board import Board
 from player import Player
 class Game:
-    def __init__(self):
+    def __init__(self, player1:Player, player2:Player):
         self.boardState = Board() 
+        self.players = [player1, player2]
+        self.winner = ""
+
+    def getPlayer(self, index) -> Player:
+        return self.players[index]
 
     # checks if position to be updated is legally allowed to be played updates and returns True if legal, returns False if illegal
     def updateBoard(self, position:int, player:Player) -> bool:
@@ -94,6 +99,10 @@ class Game:
 
         else:
             return False
+
+    def setWinner(self, index):
+        self.players[index].addScore()
+        self.winner = self.players[index].getName()
 
     # returns true if board is full
     def isFull(self) -> bool:
