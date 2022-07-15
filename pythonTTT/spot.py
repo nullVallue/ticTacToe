@@ -15,3 +15,14 @@ class Spot:
 
     def setEmpty(self, isempty:bool):
         self.empty = isempty
+
+    def printSpot(self):
+        if self.empty:
+            print(" ")
+            return
+        elif self.cross:
+            print("x")
+            return
+        else:
+            print("o")
+            return

@@ -15,3 +15,5 @@ class Board:
 
     def getSpot(self, position):
         return self.spot[position]
+
+    def printBoard(self):
