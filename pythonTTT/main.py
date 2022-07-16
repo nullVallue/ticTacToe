@@ -72,15 +72,16 @@ def play():
     player2 = Player(player2Name, True)
 
     game = Game(player1, player2)
-    game.getBoardState().printBoard()
 
     end = False
     i = 2
+    winnerIndex = -1
     while not end:
-        if (i%2) > 0:
-            turn = game.getPlayer(1)
-        else:
+        game.getBoardState().printBoard()
+        if (i%2) == 0:
             turn = game.getPlayer(0)
+        else:
+            turn = game.getPlayer(1)
         
         legal = False
         while not legal:
@@ -93,9 +94,37 @@ def play():
 
         if game.checkWin(game.getPlayer(0).isCrossPlayer()):
             end = True
+            winnerIndex = 0
         elif game.checkWin(game.getPlayer(1).isCrossPlayer()):
             end = True
+            winnerIndex = 1
+        elif game.isFull():
+            winnerIndex = -1
+            end = True
 
+        if end:
+            game.getBoardState().printBoard()
+            if winnerIndex == 0:
+                game.setWinner(0)
+            elif winnerIndex == 1:
+                game.setWinner(1)
+            else:
+                game.setDraw()
 
+        i += 1
+
+    print("\n===============")
+    print("Game has ended!")
+    print("===============\n")
+    if winnerIndex > -1:
+        print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("WINNER : " + game.getWinner())
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    else:
+        print("\n||||||||||||||||||||||||||")
+        print(game.getWinner() + "")
+        print("||||||||||||||||||||||||||\n")
+
+    return
 
 main()

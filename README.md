@@ -62,3 +62,5 @@ Creating ticTacToe game with different programming languages
 > +checkWin(cross):bool
 > +isFull():bool
 > +setWinner(index):void
+> +getWinner():str
+> +setDraw():void

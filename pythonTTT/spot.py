@@ -8,7 +8,7 @@ class Spot:
         return self.empty
 
     def isCross(self) -> bool:
-        return self.empty
+        return self.cross
 
     def setCross(self, iscross:bool):
         self.cross = iscross 

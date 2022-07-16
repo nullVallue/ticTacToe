@@ -20,6 +20,7 @@ class Game:
                 updatePosition.setCross(True)
                 updatePosition.setEmpty(False)
             else:
+                updatePosition.setCross(False)
                 updatePosition.setEmpty(False)
 
             return True
@@ -43,7 +44,7 @@ class Game:
         else:
             check = not self.boardState.getSpot(s1).isCross() and not self.boardState.getSpot(s2).isCross() and not self.boardState.getSpot(s3).isCross()
 
-        if not (self.boardState.getSpot(s1).isEmpty() and self.boardState.getSpot(s2).isEmpty() and self.boardState.getSpot(s3).isEmpty()):
+        if not self.boardState.getSpot(s1).isEmpty() and not self.boardState.getSpot(s2).isEmpty() and not self.boardState.getSpot(s3).isEmpty():
             if check:
                 return True
             else:
@@ -107,14 +108,20 @@ class Game:
         self.players[index].addScore()
         self.winner = self.players[index].getName()
 
+    def getWinner(self) -> str:
+        return self.winner
+
+    def setDraw(self):
+        self.winner = "DRAW"
+
     # returns true if board is full
     def isFull(self) -> bool:
         full = False
         for i in range(0,9):
             if not self.boardState.getSpot(i).isEmpty():
                 full = True
-                break
             else:
                 full = False
+                break
         return full
 
