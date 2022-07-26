@@ -12,13 +12,12 @@ Creating ticTacToe game with different programming languages
 ### main file
 
 ### Player
-> -name:str
-
-> -score:int
-
-> -cross:bool
-
-> -mark:str
+```
+-name:str
+-score:int
+-cross:bool
+-mark:str
+```
 
 > init(name:str, cross:bool)
 >
